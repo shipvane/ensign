@@ -27,13 +27,23 @@ environment and hand back code they can't truly verify. Shipvane is the opposite
 - **You hold the final say.** Code only moves forward with your approval — runs
   are ephemeral and scoped per ticket.
 
-## The pieces
+## The fleet
 
-- **Shipvane Connect** — the CLI you drive from your terminal. Point it at a
-  ticket, watch progress stream back, and approve each step. *(In development.)*
-- **Shipvane Engine** — the agentic runtime, packaged to deploy and provision
-  into your own cloud. It runs the real checkout, build, and CI loop where your
-  code already lives. *(In development.)*
+Every part is named for the job it actually does on a ship — learn the vessel
+and you've learned the product.
+
+| | Role | Status |
+|---|---|---|
+| **Engine** | Drives the work — the agentic runtime, deployed into your own cloud | In development |
+| **Connect** | Gets you aboard — the tender: a CLI that carries your orders out to the Engine | In development |
+| **Bridge** | Sees everything — run history, live logs, and run controls from browser or phone | In development |
+| **Capstan** | Hauls the backlog — the autonomous loop, one reviewable PR at a time | In development |
+| **Helm** | Sets the course — the dispatcher: what runs, in what order, under what spend cap | Planned, not yet built |
+| **Ensign** | Flies the flag — **this repo**: shipvane.com plus the brand and social assets | — |
+
+**[TideLog](https://github.com/shipvane/tidelog)** isn't part of the fleet. It's
+a real app — a harbor operations logbook — that we build entirely with Shipvane,
+in the open, so anyone can read the pull requests Engine wrote.
 
 Engine speaks the **Model Context Protocol** and signs in over **OAuth**, so the
 Connect CLI is just one way in — you can also drive it straight from the AI
