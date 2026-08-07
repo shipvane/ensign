@@ -141,9 +141,39 @@
     .social a{color:var(--muted);display:inline-flex;transition:color .15s ease}
     .social a:hover{color:var(--green-d)}
     .social svg{width:20px;height:20px;display:block}
+    /* fleet */
+    .ship{display:block;width:100%;height:auto;max-width:900px;margin:0 auto 46px}
+    .ship text{font-family:inherit}
+    .ship .nm{font-size:16px;font-weight:800;fill:var(--ink)}
+    .ship .rl{font-size:13.5px;font-weight:600;fill:var(--muted)}
+    .ship .ldr{stroke:var(--line);stroke-width:2}
+    .fleet{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .fl{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+      box-shadow:0 1px 2px rgba(14,39,70,.04);display:flex;flex-direction:column}
+    .fl .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+    .fl h3{font-size:19px}
+    .fl .role{color:var(--blue);font-weight:700;font-size:14.5px;margin-bottom:8px}
+    .fl p{color:var(--muted);font-size:15px;flex:1}
+    .chip{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+      padding:4px 10px;border-radius:999px;white-space:nowrap}
+    .chip-dev{color:var(--blue);background:rgba(42,92,156,.08);border:1px solid rgba(42,92,156,.22)}
+    .chip-plan{color:var(--muted);background:rgba(91,107,122,.07);border:1px solid rgba(91,107,122,.2)}
+    .proof{margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:18px;
+      padding:26px 28px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:space-between}
+    .proof p{color:var(--muted);font-size:15.5px;max-width:640px}
+    .proof strong{color:var(--ink)}
+    .ship-hint{display:none;text-align:center;color:var(--muted);font-size:13.5px;margin:-22px 0 34px}
+
     @media(max-width:760px){
       .hero h1{font-size:38px}.grid,.steps,.prods{grid-template-columns:1fr}.nav-links{display:none}
       h2{font-size:30px}
+      .fleet{grid-template-columns:1fr}
+      .proof{justify-content:flex-start}
+      /* Shrunk to phone width the labels stop being readable, so let the
+         diagram keep its size and scroll inside its own box instead. */
+      .ship-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:34px}
+      .ship{min-width:620px;margin-bottom:0}
+      .ship-hint{display:block}
     }
   </style>
 </head>
@@ -154,6 +184,7 @@
       <a href="#why">Why Shipvane</a>
       <a href="#how">How it works</a>
       <a href="#products">Connect &amp; Engine</a>
+      <a href="#fleet">Fleet</a>
       <a href="https://github.com/shipvane">GitHub</a>
       <a class="btn btn-green" href="#waitlist" style="padding:9px 16px">Join waitlist</a>
     </div>
@@ -262,6 +293,120 @@
         <div class="client soon">ChatGPT <span class="lab">coming</span></div>
       </div>
       <p class="clients-note">…and any MCP-compatible client, authenticated over standard OAuth.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fleet">
+    <div class="wrap">
+      <div class="eyebrow">The Shipvane Fleet</div>
+      <h2>One ship. Every station crewed.</h2>
+      <p class="lead">Shipvane isn't a single tool — it's a small fleet of parts, each named for the job it
+        actually does on a ship. Learn the vessel and you've learned the product.</p>
+
+      <div class="ship-scroll">
+      <svg class="ship" viewBox="0 96 1000 306" role="img"
+           aria-label="Cutaway of a ship labelling each Shipvane component: Connect is the gangway, Capstan sits on the foredeck, Engine is belowdecks, Bridge is the command deck, Helm is inside the bridge, and Ensign is the flag at the stern.">
+        <!-- sea -->
+        <path d="M0 300 H1000 V402 H0 Z" fill="#eaf2fa"/>
+        <path d="M0 300 H1000" stroke="#cfe0f2" stroke-width="2"/>
+
+        <!-- quay + gangway (connect) -->
+        <rect x="34" y="286" width="96" height="15" rx="4" fill="#c9d8e8"/>
+        <path d="M128 292 L214 250 L224 259 L138 301 Z" fill="var(--green)" opacity=".85"/>
+
+        <!-- hull (engine lives inside) -->
+        <path d="M150 252 H795 L768 316 H192 Z" fill="var(--navy)"/>
+        <rect x="380" y="266" width="152" height="40" rx="9" fill="#1d4a80"/>
+        <circle cx="404" cy="286" r="7" fill="var(--green)"/>
+        <path d="M424 286 H512" stroke="#7fb0e0" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+
+        <!-- capstan on the foredeck -->
+        <rect x="256" y="231" width="40" height="21" rx="4" fill="var(--blue)"/>
+        <ellipse cx="276" cy="231" rx="20" ry="6" fill="var(--blue-l)"/>
+
+        <!-- bridge + helm -->
+        <rect x="590" y="176" width="120" height="76" rx="6" fill="var(--blue)"/>
+        <rect x="602" y="190" width="96" height="18" rx="3" fill="#bcd9f5"/>
+        <circle cx="650" cy="228" r="13" fill="none" stroke="var(--green)" stroke-width="3"/>
+        <path d="M650 215 V241 M637 228 H663" stroke="var(--green)" stroke-width="2.5"/>
+
+        <!-- ensign at the stern -->
+        <path d="M789 252 V168" stroke="var(--navy)" stroke-width="3"/>
+        <path d="M789 172 L836 185 L789 198 Z" fill="var(--green)"/>
+
+        <!-- leaders + labels -->
+        <path class="ldr" d="M276 225 V196"/>
+        <text class="nm" x="276" y="180" text-anchor="middle">Capstan</text>
+        <text class="rl" x="276" y="199" text-anchor="middle">hauls the backlog</text>
+
+        <path class="ldr" d="M650 176 V140"/>
+        <text class="nm" x="650" y="124" text-anchor="middle">Bridge</text>
+        <text class="rl" x="650" y="143" text-anchor="middle">sees everything</text>
+
+        <path class="ldr" d="M556 228 H634"/>
+        <text class="nm" x="548" y="222" text-anchor="end">Helm</text>
+        <text class="rl" x="548" y="241" text-anchor="end">sets the course</text>
+
+        <path class="ldr" d="M838 185 H872"/>
+        <text class="nm" x="880" y="180">Ensign</text>
+        <text class="rl" x="880" y="199">flies the flag</text>
+
+        <path class="ldr" d="M456 308 V344"/>
+        <text class="nm" x="456" y="366" text-anchor="middle">Engine</text>
+        <text class="rl" x="456" y="385" text-anchor="middle">drives the work</text>
+
+        <path class="ldr" d="M150 298 V336"/>
+        <text class="nm" x="126" y="358" text-anchor="middle">Connect</text>
+        <text class="rl" x="126" y="377" text-anchor="middle">gets you aboard</text>
+      </svg>
+      </div>
+      <p class="ship-hint">Swipe the diagram to see the whole ship →</p>
+
+      <div class="fleet">
+        <div class="fl">
+          <div class="top"><h3>Engine</h3><span class="chip chip-dev">In development</span></div>
+          <div class="role">Drives the work</div>
+          <p>The agentic runtime, deployed into your own cloud. Takes a ticket, works a real checkout, and
+            iterates against your real CI until the gate is green.</p>
+        </div>
+        <div class="fl">
+          <div class="top"><h3>Connect</h3><span class="chip chip-dev">In development</span></div>
+          <div class="role">Gets you aboard</div>
+          <p>The tender — a CLI that carries your orders out to the Engine and brings results back, without
+            leaving the shell you already live in.</p>
+        </div>
+        <div class="fl">
+          <div class="top"><h3>Bridge</h3><span class="chip chip-dev">In development</span></div>
+          <div class="role">Sees everything</div>
+          <p>The dashboard. Run history, live logs, and launch or stop controls — from your browser or your
+            phone.</p>
+        </div>
+        <div class="fl">
+          <div class="top"><h3>Capstan</h3><span class="chip chip-dev">In development</span></div>
+          <div class="role">Hauls the backlog</div>
+          <p>The autonomous loop. Point it at a backlog and it works the queue end to end, one reviewable
+            pull request at a time.</p>
+        </div>
+        <div class="fl">
+          <div class="top"><h3>Helm</h3><span class="chip chip-plan">Planned</span></div>
+          <div class="role">Sets the course</div>
+          <p>The dispatcher: what runs, in what order, at what concurrency, under what spend cap. Designed,
+            not yet built — and we'd rather say so.</p>
+        </div>
+        <div class="fl">
+          <div class="top"><h3>Ensign</h3><span class="chip chip-plan">Not a product</span></div>
+          <div class="role">Flies the flag</div>
+          <p>The colours a ship runs up to declare who she is. It's this site — the one part of the fleet
+            you're already looking at.</p>
+        </div>
+      </div>
+
+      <div class="proof">
+        <p><strong>See it for yourself.</strong> TideLog is a public demo repo we point the Engine at. The
+          pull requests there were written end to end by Engine — planned, implemented, tested — and each
+          one passed TideLog's own CI before a human read a line.</p>
+        <a class="btn btn-dark" href="https://github.com/shipvane/tidelog/pulls">Read the PRs →</a>
+      </div>
     </div>
   </section>
 
