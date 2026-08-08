@@ -95,18 +95,6 @@
     .step p{color:var(--muted);font-size:14.5px}
     .step.green .n{background:linear-gradient(180deg,var(--green),var(--green-d));color:#04231a}
 
-    /* products */
-    .prods{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-    .prod{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;
-      box-shadow:0 1px 2px rgba(14,39,70,.04)}
-    .prod .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;
-      letter-spacing:.5px;text-transform:uppercase;color:var(--blue);background:rgba(42,92,156,.08);
-      border:1px solid rgba(42,92,156,.22);padding:5px 12px;border-radius:999px;margin-bottom:14px}
-    .prod h3{font-size:21px;margin-bottom:8px}
-    .prod p{color:var(--muted);font-size:15.5px}
-    .prod .soon{display:inline-block;margin-top:14px;font-size:12px;font-weight:800;letter-spacing:.5px;
-      text-transform:uppercase;color:var(--green-d)}
-
     /* ai clients */
     .clients{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:4px}
     .client{display:inline-flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);
@@ -162,12 +150,19 @@
       padding:26px 28px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:space-between}
     .proof p{color:var(--muted);font-size:15.5px;max-width:640px}
     .proof strong{color:var(--ink)}
+    .ev{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .ev-card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:22px}
+    .ev-n{width:30px;height:30px;border-radius:9px;background:linear-gradient(180deg,var(--green),var(--green-d));
+      color:#04231a;display:flex;align-items:center;justify-content:center;font-weight:800;
+      font-size:14px;margin-bottom:12px}
+    .ev-card h4{font-size:16px;margin-bottom:6px}
+    .ev-card p{color:var(--muted);font-size:14.5px}
     .ship-hint{display:none;text-align:center;color:var(--muted);font-size:13.5px;margin:-22px 0 34px}
 
     @media(max-width:760px){
-      .hero h1{font-size:38px}.grid,.steps,.prods{grid-template-columns:1fr}.nav-links{display:none}
+      .hero h1{font-size:38px}.grid,.steps{grid-template-columns:1fr}.nav-links{display:none}
       h2{font-size:30px}
-      .fleet{grid-template-columns:1fr}
+      .fleet,.ev{grid-template-columns:1fr}
       .proof{justify-content:flex-start}
       /* Shrunk to phone width the labels stop being readable, so let the
          diagram keep its size and scroll inside its own box instead. */
@@ -183,8 +178,8 @@
     <div class="nav-links">
       <a href="#why">Why Shipvane</a>
       <a href="#how">How it works</a>
-      <a href="#products">Connect &amp; Engine</a>
-      <a href="#fleet">Fleet</a>
+      <a href="#fleet">The Fleet</a>
+      <a href="#proof">Proof</a>
       <a href="https://github.com/shipvane">GitHub</a>
       <a class="btn btn-green" href="#waitlist" style="padding:9px 16px">Join waitlist</a>
     </div>
@@ -249,50 +244,6 @@
         <div class="step green"><div class="n">✓</div><h4>Review &amp; merge</h4><p>You hold the final say. Feedback loops back through the cycle; on your approval, it merges.</p></div>
       </div>
       <p class="clients-note">A full loop, not a one-shot — review feeds back in and the cycle runs until it's earned the merge.</p>
-    </div>
-  </section>
-
-  <section class="block" id="products">
-    <div class="wrap">
-      <div class="eyebrow">Two pieces, one workflow</div>
-      <h2>Connect points the way. Engine does the work.</h2>
-      <p class="lead">Shipvane is an open, self-hostable stack — a CLI you drive from your terminal and an
-        agent runtime that lives in your cloud. No SaaS tenancy, no lock-in.</p>
-      <div class="prods">
-        <div class="prod">
-          <div class="badge">Shipvane Connect · CLI</div>
-          <h3>Your terminal, your control surface</h3>
-          <p>Connect is the command-line client you point at a ticket. It hands the work to your Engine,
-            streams progress back, and keeps you in the loop on every approval — all without leaving the
-            shell you already live in.</p>
-          <span class="soon">In development</span>
-        </div>
-        <div class="prod">
-          <div class="badge">Shipvane Engine · Runtime</div>
-          <h3>The full-stack ADLC, in your cloud</h3>
-          <p>Engine is the agentic core — the whole Agentic Software Development Life Cycle, packaged to
-            deploy and provision into your own AWS account. It runs the real checkout, build, and CI loop
-            where your code already lives — so you own the environment, the logs, and the keys.</p>
-          <span class="soon">In development</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="clients" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div class="wrap">
-      <div class="eyebrow">Bring your own AI client</div>
-      <h2>One Engine. Many front doors.</h2>
-      <p class="lead">Shipvane Engine speaks the Model Context Protocol and signs in over OAuth — so beyond
-        the Connect CLI, you can drive it straight from the AI client you already use. No custom
-        integration, no lock-in.</p>
-      <div class="clients">
-        <div class="client"><span class="ck">✓</span> Claude Code</div>
-        <div class="client"><span class="ck">✓</span> Claude Desktop</div>
-        <div class="client"><span class="ck">✓</span> Claude Mobile</div>
-        <div class="client soon">ChatGPT <span class="lab">coming</span></div>
-      </div>
-      <p class="clients-note">…and any MCP-compatible client, authenticated over standard OAuth.</p>
     </div>
   </section>
 
@@ -366,14 +317,15 @@
         <div class="fl">
           <div class="top"><h3>Engine</h3><span class="chip chip-dev">In development</span></div>
           <div class="role">Drives the work</div>
-          <p>The agentic runtime, deployed into your own cloud. Takes a ticket, works a real checkout, and
-            iterates against your real CI until the gate is green.</p>
+          <p>The agentic core, packaged to deploy into your own AWS account. It runs the real checkout,
+            build and CI loop where your code already lives — so you own the environment, the logs and
+            the keys.</p>
         </div>
         <div class="fl">
           <div class="top"><h3>Connect</h3><span class="chip chip-dev">In development</span></div>
           <div class="role">Gets you aboard</div>
-          <p>The tender — a CLI that carries your orders out to the Engine and brings results back, without
-            leaving the shell you already live in.</p>
+          <p>The tender: point it at a ticket and it hands the work to your Engine, streams progress back,
+            and keeps you in the loop on every approval — without leaving the shell you live in.</p>
         </div>
         <div class="fl">
           <div class="top"><h3>Bridge</h3><span class="chip chip-dev">In development</span></div>
@@ -401,12 +353,64 @@
         </div>
       </div>
 
-      <div class="proof">
-        <p><strong>See it for yourself.</strong> TideLog is a real app — a harbor operations logbook — that
-          we build entirely with Shipvane, in the open. Every pull request there was written end to end by
-          Engine: planned, implemented, tested, and green in TideLog's own CI before a human read a line.</p>
-        <a class="btn btn-dark" href="https://github.com/shipvane/tidelog/pulls">Read the PRs →</a>
+    </div>
+  </section>
+
+  <section class="block" id="proof" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="eyebrow">Proof, not promises</div>
+      <h2>Watch it build a real app.</h2>
+      <p class="lead">Anyone can claim an agent writes working code. <strong>TideLog</strong> is a real app —
+        a harbor operations logbook — that we build entirely with Shipvane, in the open, so you can read
+        every line it wrote and check the build that passed.</p>
+
+      <div class="ev">
+        <div class="ev-card">
+          <div class="ev-n">1</div>
+          <h4>A ticket goes in</h4>
+          <p>A plain feature request on TideLog's board — no prompt engineering, no hand-holding.</p>
+        </div>
+        <div class="ev-card">
+          <div class="ev-n">2</div>
+          <h4>Engine does the work</h4>
+          <p>Reads the repo, plans the change, writes the frontend, backend and tests on a real branch.</p>
+        </div>
+        <div class="ev-card">
+          <div class="ev-n">3</div>
+          <h4>The build has to pass</h4>
+          <p>It runs TideLog's own CI and iterates on the real errors until the gate is green.</p>
+        </div>
+        <div class="ev-card">
+          <div class="ev-n">4</div>
+          <h4>A PR you can read</h4>
+          <p>The whole diff, open for review — nothing merged until a human says so.</p>
+        </div>
       </div>
+
+      <div class="proof">
+        <p><strong>A real example.</strong> "Agent notifications for port call events" went in as one
+          sentence. Engine came back with <strong>nine files and about 1,100 lines</strong> across the API
+          and the UI, plus the test file it wrote to prove the feature worked — green in TideLog's CI
+          before anyone looked at it.</p>
+        <a class="btn btn-dark" href="https://github.com/shipvane/tidelog/pulls">Read the pull requests →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="clients">
+    <div class="wrap">
+      <div class="eyebrow">Bring your own AI client</div>
+      <h2>One Engine. Many front doors.</h2>
+      <p class="lead">Shipvane Engine speaks the Model Context Protocol and signs in over OAuth — so beyond
+        the Connect CLI, you can drive it straight from the AI client you already use. No custom
+        integration, no lock-in.</p>
+      <div class="clients">
+        <div class="client"><span class="ck">✓</span> Claude Code</div>
+        <div class="client"><span class="ck">✓</span> Claude Desktop</div>
+        <div class="client"><span class="ck">✓</span> Claude Mobile</div>
+        <div class="client soon">ChatGPT <span class="lab">coming</span></div>
+      </div>
+      <p class="clients-note">…and any MCP-compatible client, authenticated over standard OAuth.</p>
     </div>
   </section>
 
