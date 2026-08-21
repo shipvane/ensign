@@ -145,6 +145,11 @@
     .fl h3{font-size:19px}
     .fl .role{color:var(--blue);font-weight:700;font-size:14.5px;margin-bottom:8px}
     .fl p{color:var(--muted);font-size:15px;flex:1}
+    /* "Open it" affordance for the cards whose product is reachable today.
+       margin-top:auto would fight `flex:1` on the <p>, so the spacing is
+       explicit and align-self keeps the link from stretching the card. */
+    .fl-go{margin-top:14px;align-self:flex-start;color:var(--blue);font-weight:700;font-size:14.5px}
+    .fl-go:hover{color:var(--blue-l);text-decoration:underline;text-underline-offset:3px}
     .chip{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
       padding:4px 10px;border-radius:999px;white-space:nowrap}
     .chip-dev{color:var(--blue);background:rgba(42,92,156,.08);border:1px solid rgba(42,92,156,.22)}
@@ -161,6 +166,15 @@
     .ev-card h4{font-size:16px;margin-bottom:6px}
     .ev-card p{color:var(--muted);font-size:14.5px}
     .ship-hint{display:none;text-align:center;color:var(--muted);font-size:13.5px;margin:-22px 0 34px}
+
+    /* The nav collapses at 760px, and its six links + button needed 757px to
+       fit — tuned so it hides just before it would overflow. Adding Bridge
+       pushed that to 827px, opening a 761-826px window where the bar spilled.
+       Tightening the gap here buys the room back rather than collapsing the
+       nav (and the waitlist CTA with it) earlier on tablets. */
+    @media(max-width:920px){
+      .nav-links{gap:14px;font-size:14px}
+    }
 
     @media(max-width:760px){
       .hero h1{font-size:38px}.grid,.steps{grid-template-columns:1fr}.nav-links{display:none}
@@ -183,6 +197,7 @@
       <a href="#how">How it works</a>
       <a href="#fleet">The Fleet</a>
       <a href="#proof">Proof</a>
+      <a href="https://bridge.shipvane.com">Bridge</a>
       <a href="https://github.com/shipvane">GitHub</a>
       <a class="btn btn-green" href="#waitlist" style="padding:9px 16px">Join waitlist</a>
     </div>
@@ -335,6 +350,7 @@
           <div class="role">Sees everything</div>
           <p>The dashboard. Run history, live logs, and launch or stop controls — from your browser or your
             phone.</p>
+          <a class="fl-go" href="https://bridge.shipvane.com">Open Bridge →</a>
         </div>
         <div class="fl">
           <div class="top"><h3>Capstan</h3><span class="chip chip-dev">In development</span></div>
@@ -395,7 +411,11 @@
           sentence. Engine came back with <strong>nine files and about 1,100 lines</strong> across the API
           and the UI, plus the test file it wrote to prove the feature worked — green in TideLog's CI
           before anyone looked at it.</p>
-        <a class="btn btn-dark" href="https://github.com/shipvane/tidelog/pulls">Read the pull requests →</a>
+        <div class="cta" style="margin-top:18px">
+          <a class="btn btn-dark" href="https://demo.shipvane.com">See the live app →</a>
+          <a class="btn btn-ghost" href="https://github.com/shipvane/tidelog/pulls"
+             style="border-color:var(--line);color:var(--ink)">Read the pull requests →</a>
+        </div>
       </div>
     </div>
   </section>
