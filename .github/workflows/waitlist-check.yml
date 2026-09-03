@@ -1,0 +1,44 @@
+name: Waitlist smoke check
+
+# The waitlist form is the site's only conversion path, and it fails silently:
+# a wrong Turnstile site key or a mangled form action leaves a page that looks
+# perfect and accepts nobody. This checks the source before merge, and the live
+# site on a schedule so a break outside a deploy (a rotated key, a deleted
+# Cloudflare widget) still surfaces.
+
+on:
+  pull_request:
+    paths:
+      - "site/**"
+      - "scripts/check-waitlist.py"
+      - "scripts/test_check_waitlist.py"
+      - ".github/workflows/waitlist-check.yml"
+  schedule:
+    # 14:00 UTC daily — a weekday morning in the US, so a failure is seen.
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    name: Source (pre-merge gate)
+    # Nothing to gate on a scheduled run — there is no PR diff.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test the checker itself
+        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Check the committed page
+        run: python3 scripts/check-waitlist.py --file site/index.html
+
+  live:
+    name: Live site
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check what visitors are actually served
+        run: python3 scripts/check-waitlist.py --url https://shipvane.com/
