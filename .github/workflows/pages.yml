@@ -33,3 +33,13 @@ jobs:
           path: site
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # The waitlist form fails silently, so confirm the deployed page still accepts
+  # signups rather than waiting for the next scheduled check to notice.
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Waitlist smoke check against the live site
+        run: python3 scripts/check-waitlist.py --url https://shipvane.com/
