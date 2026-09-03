@@ -27,6 +27,9 @@
   <meta name="twitter:title" content="Shipvane — Ship your code, just point the way" />
   <meta name="twitter:description" content="A full-stack ADLC — the Agentic Software Development Life Cycle — in your own cloud. Ticket to merge-ready PR, gated by real CI and your approval. No black box." />
   <meta name="twitter:image" content="https://shipvane.com/og-image.png" />
+
+  <!-- Cloudflare Turnstile, guarding the waitlist form -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root{
       --navy:#0E2746; --navy2:#0a1f3b; --blue:#2A5C9C; --blue-l:#3F86C8;
@@ -121,6 +124,9 @@
     .wait form{display:flex;gap:10px;max-width:460px;margin:24px auto 0;flex-wrap:wrap;justify-content:center}
     .wait input{flex:1;min-width:240px;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:15px}
     .wait input:focus{outline:none;border-color:var(--blue-l)}
+    /* Turnstile wraps onto its own row under the input; the min-height holds
+       that space so the section doesn't jump when the widget loads. */
+    .wait .cf-turnstile{width:100%;display:flex;justify-content:center;min-height:65px;margin-top:4px}
 
     footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
     footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
@@ -461,8 +467,13 @@
       <form id="waitlist-form" action="https://formspree.io/f/mbdvrvke" method="POST">
         <input type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
         <button class="btn btn-dark" type="submit">Join the waitlist</button>
+        <!-- Site key for the `shipvane-waitlist` Turnstile widget. Public by
+             design; the matching secret key lives only in Formspree's dashboard,
+             which is what actually verifies the token server-side. -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAElVOZSIfpUwMhx9" data-theme="light"></div>
         <p class="msg ok" style="display:none;width:100%;color:var(--green-d);font-weight:700;margin-top:8px">Thanks — you're on the list. ⚓</p>
         <p class="msg err" style="display:none;width:100%;color:#c0392b;font-weight:700;margin-top:8px">Something went off-course. Email <a href="mailto:hello@shipvane.com" style="color:#c0392b;text-decoration:underline">hello@shipvane.com</a> and we'll add you.</p>
+        <p class="msg verify" style="display:none;width:100%;color:#c0392b;font-weight:700;margin-top:8px">Finish the verification check above, then try again.</p>
       </form>
     </div>
   </section>
@@ -489,14 +500,29 @@
   <script>
     // Waitlist: submit via fetch so the page never navigates away.
     // Posts to the Formspree endpoint set in the form action (free tier).
+    //
+    // Cloudflare Turnstile guards it. The widget drops a `cf-turnstile-response`
+    // token into the form, FormData carries it along, and Formspree verifies that
+    // token against the secret key set in its dashboard, so a bot POSTing straight
+    // at the endpoint is turned away there rather than merely inconvenienced here.
     (function () {
       var form = document.getElementById('waitlist-form');
       if (!form) return;
       var ok = form.querySelector('.ok');
       var err = form.querySelector('.err');
+      var verify = form.querySelector('.verify');
+
+      function token() {
+        var field = form.querySelector('[name="cf-turnstile-response"]');
+        return field ? field.value : '';
+      }
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        ok.style.display = err.style.display = 'none';
+        ok.style.display = err.style.display = verify.style.display = 'none';
+        // Usually resolved long before anyone finishes typing, but a slow load
+        // or a challenge still in progress leaves us without a token to send.
+        if (!token()) { verify.style.display = 'block'; return; }
         var btn = form.querySelector('button');
         btn.disabled = true;
         fetch(form.action, {
@@ -510,6 +536,8 @@
           err.style.display = 'block';
         }).finally(function () {
           btn.disabled = false;
+          // Turnstile tokens are single-use, so a retry needs a fresh one.
+          if (window.turnstile) window.turnstile.reset();
         });
       });
     })();
