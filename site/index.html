@@ -33,8 +33,9 @@
   <style>
     :root{
       --navy:#0E2746; --navy2:#0a1f3b; --blue:#2A5C9C; --blue-l:#3F86C8;
-      --green:#34D399; --green-d:#12A074; --ink:#0E2746; --muted:#5B6B7A;
+      --green:#E8B44A; --green-d:#A87516; --ink:#0E2746; --muted:#5B6B7A;
       --bg:#F6F9FC; --card:#FFFFFF; --line:#E4ECF4;
+      --ok:#12A074; /* semantic success green — NOT the brand accent */
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -45,7 +46,7 @@
     .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:12px;
       padding:13px 22px;font-size:15px;transition:transform .08s ease,box-shadow .2s ease}
     .btn:active{transform:translateY(1px)}
-    .btn-green{background:linear-gradient(180deg,var(--green),var(--green-d));color:#04231a;
+    .btn-green{background:linear-gradient(180deg,var(--green),var(--green-d));color:#0a1024;
       box-shadow:0 6px 18px rgba(18,160,116,.35)}
     .btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
     .btn-dark{background:var(--navy);color:#fff}
@@ -65,11 +66,11 @@
       color:#fff;text-align:center;padding:64px 0 96px;position:relative;overflow:hidden}
     .hero img.emblem{width:148px;height:148px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.4));margin-bottom:26px}
     .hero h1{font-size:54px;line-height:1.08;font-weight:800;letter-spacing:-1px;max-width:760px;margin:0 auto}
-    .hero h1 .g{background:linear-gradient(90deg,var(--green),#7af0c8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .hero h1 .g{background:linear-gradient(90deg,var(--green),#F2CD7E);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .hero p.sub{margin:22px auto 34px;max-width:600px;font-size:19px;color:#bcd3ec}
     .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
     .pill{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
-      color:var(--green);background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);
+      color:var(--green);background:rgba(232,180,74,.14);border:1px solid rgba(232,180,74,.34);
       padding:6px 14px;border-radius:999px;margin-bottom:24px}
 
     /* sections */
@@ -86,7 +87,7 @@
     .card .tag{font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
     .card.bad .tag{color:#c0392b}
     .card.good{border-color:#cdeede;background:#f5fefa}
-    .card.good .tag{color:var(--green-d)}
+    .card.good .tag{color:var(--ok)}
     .card p{color:var(--muted);font-size:15.5px}
 
     /* steps */
@@ -96,14 +97,14 @@
       display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
     .step h4{font-size:16.5px;margin-bottom:6px}
     .step p{color:var(--muted);font-size:14.5px}
-    .step.green .n{background:linear-gradient(180deg,var(--green),var(--green-d));color:#04231a}
+    .step.green .n{background:linear-gradient(180deg,var(--green),var(--green-d));color:#0a1024}
 
     /* ai clients */
     .clients{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:4px}
     .client{display:inline-flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);
       border-radius:14px;padding:14px 20px;font-weight:700;font-size:16px;color:var(--ink)}
     .client .ck{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
-      border-radius:50%;background:linear-gradient(180deg,var(--green),var(--green-d));color:#04231a;
+      border-radius:50%;background:linear-gradient(180deg,var(--green),var(--green-d));color:#0a1024;
       font-size:12px;font-weight:900}
     .client.soon{color:var(--muted)}
     .client .lab{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);
@@ -117,7 +118,7 @@
     .band p{color:#bcd3ec;max-width:560px;margin:6px auto 0;font-size:17px}
     .band .row{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:30px}
     .band .row div{display:flex;align-items:center;gap:9px;font-weight:600;color:#dceaf8}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.2)}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(232,180,74,.22)}
 
     /* waitlist */
     .wait{text-align:center}
@@ -167,7 +168,7 @@
     .ev{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
     .ev-card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:22px}
     .ev-n{width:30px;height:30px;border-radius:9px;background:linear-gradient(180deg,var(--green),var(--green-d));
-      color:#04231a;display:flex;align-items:center;justify-content:center;font-weight:800;
+      color:#0a1024;display:flex;align-items:center;justify-content:center;font-weight:800;
       font-size:14px;margin-bottom:12px}
     .ev-card h4{font-size:16px;margin-bottom:6px}
     .ev-card p{color:var(--muted);font-size:14.5px}
@@ -471,7 +472,7 @@
              design; the matching secret key lives only in Formspree's dashboard,
              which is what actually verifies the token server-side. -->
         <div class="cf-turnstile" data-sitekey="0x4AAAAAAElVOZSIfpUwMhx9" data-theme="light"></div>
-        <p class="msg ok" style="display:none;width:100%;color:var(--green-d);font-weight:700;margin-top:8px">Thanks — you're on the list. ⚓</p>
+        <p class="msg ok" style="display:none;width:100%;color:var(--ok);font-weight:700;margin-top:8px">Thanks — you're on the list. ⚓</p>
         <p class="msg err" style="display:none;width:100%;color:#c0392b;font-weight:700;margin-top:8px">Something went off-course. Email <a href="mailto:hello@shipvane.com" style="color:#c0392b;text-decoration:underline">hello@shipvane.com</a> and we'll add you.</p>
         <p class="msg verify" style="display:none;width:100%;color:#c0392b;font-weight:700;margin-top:8px">Finish the verification check above, then try again.</p>
       </form>

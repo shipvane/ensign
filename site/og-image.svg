@@ -9,13 +9,13 @@
   <image href="assets/logo.svg" x="92" y="150" width="330" height="330"/>
   <!-- text block -->
   <g font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif">
-    <rect x="470" y="150" width="514" height="44" rx="22" fill="rgba(52,211,153,0.12)" stroke="#34D399" stroke-opacity="0.4"/>
-    <text x="494" y="179" font-size="20" font-weight="700" letter-spacing="2" fill="#34D399">YOUR CODE · YOUR CLOUD · YOUR CALL</text>
+    <rect x="470" y="150" width="514" height="44" rx="22" fill="rgba(52,211,153,0.12)" stroke="#E8B44A" stroke-opacity="0.4"/>
+    <text x="494" y="179" font-size="20" font-weight="700" letter-spacing="2" fill="#E8B44A">YOUR CODE · YOUR CLOUD · YOUR CALL</text>
     <text x="470" y="290" font-size="104" font-weight="800" letter-spacing="1">
-      <tspan fill="#FFFFFF">ship</tspan><tspan fill="#34D399">vane</tspan>
+      <tspan fill="#FFFFFF">ship</tspan><tspan fill="#E8B44A">vane</tspan>
     </text>
     <text x="474" y="356" font-size="40" font-weight="600" fill="#BCD3EC">Ship your code, just point the way.</text>
-    <text x="474" y="422" font-size="26" fill="#7FA8C8">A full-stack <tspan fill="#34D399" font-weight="700">ADLC</tspan> — the Agentic Software</text>
+    <text x="474" y="422" font-size="26" fill="#7FA8C8">A full-stack <tspan fill="#E8B44A" font-weight="700">ADLC</tspan> — the Agentic Software</text>
     <text x="474" y="460" font-size="26" fill="#7FA8C8">Development Life Cycle, run in your own cloud.</text>
   </g>
 </svg>
