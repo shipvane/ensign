@@ -1,51 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
   <defs>
     <radialGradient id="bg" cx="0.5" cy="0.28" r="0.9"><stop offset="0" stop-color="#1b4f8c"/><stop offset="0.55" stop-color="#0E2746"/><stop offset="1" stop-color="#0a1f3b"/></radialGradient>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CDE8FA"/><stop offset="1" stop-color="#A6CFF0"/></linearGradient>
-    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#327ABE"/><stop offset="1" stop-color="#0F2F5C"/></linearGradient>
-    <linearGradient id="port" x1="0.1" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#4A90CE"/><stop offset="1" stop-color="#19406F"/></linearGradient>
-    <linearGradient id="front" x1="0.9" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#23538E"/><stop offset="1" stop-color="#0C2549"/></linearGradient>
-    <radialGradient id="ring" cx="0.5" cy="0.5" r="0.5"><stop offset="0.86" stop-color="#0E2746"/><stop offset="1" stop-color="#081A33"/></radialGradient>
-    <clipPath id="scene"><circle cx="128" cy="128" r="106"/></clipPath>
   </defs>
   <rect width="1080" height="1920" fill="url(#bg)"/>
   <g transform="translate(280.0,470) scale(2.03125)">
-    <circle cx="128" cy="128" r="118" fill="url(#ring)"/>
-    <circle cx="128" cy="128" r="106" fill="#0a1f3b"/>
-    <g clip-path="url(#scene)">
-      <rect x="22" y="22" width="212" height="212" fill="url(#sky)"/>
-      <path d="M22,170 Q128,162 234,170 L234,234 L22,234 Z" fill="url(#sea)"/>
-      <polygon points="128,24 136,52 128,45 120,52" fill="#E8B44A"/>
-      <circle cx="128" cy="52" r="2.4" fill="#0C2746"/>
-      <path d="M130,60 Q92,62 60,80 Q128,72 196,80 Q168,62 130,60 Z" fill="#5A9AD8"/>
-      <rect x="118" y="52" width="24" height="11" rx="2.5" fill="#CFE2F7"/>
-      <ellipse cx="120" cy="204" rx="15" ry="9" fill="#0C2549"/>
-      <path d="M130,60 Q74,74 50,104 Q54,150 80,176 Q100,194 120,202 L130,60 Z" fill="url(#port)"/>
-      <path d="M130,60 Q188,74 206,104 Q200,150 174,176 Q150,194 120,202 L130,60 Z" fill="url(#front)"/>
-      <path d="M130,60 L120,202" fill="none" stroke="#A8CFF2" stroke-width="2.6" opacity="0.85"/>
-      <path d="M58,118 Q120,108 198,118" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
-      <path d="M72,150 Q120,142 168,150" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
-      <path d="M70,168 Q120,196 170,168" fill="none" stroke="#E8B44A" stroke-width="2" opacity="0.7"/>
-      <circle cx="104" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
-      <circle cx="150" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
-      <g fill="#CFE9FB">
-        <path d="M120,202 C94,206 66,206 42,196 C70,224 106,224 130,210 Z"/>
-        <path d="M120,202 C146,206 174,206 198,196 C170,224 136,224 114,210 Z"/>
+    <g transform="scale(2.56)">
+      <!-- Compass star: IDENTICAL geometry to the Vaneskald mark. This is the house
+           element, so the two brands read as siblings. Blue is Shipvane's cool
+           counterpart to Vaneskald's green; the gilt below is shared. -->
+      <path d="M43.6 43.6 L50.0 3.0 L56.4 43.6 Z M56.4 43.6 L97.0 50.0 L56.4 56.4 Z M56.4 56.4 L50.0 97.0 L43.6 56.4 Z M43.6 56.4 L3.0 50.0 L43.6 43.6 Z M50.0 41.0 L69.8 30.2 L59.0 50.0 Z M59.0 50.0 L69.8 69.8 L50.0 59.0 Z M50.0 59.0 L30.2 69.8 L41.0 50.0 Z M41.0 50.0 L30.2 30.2 L50.0 41.0 Z" fill="#2E74B0"/>
+    
+      <!-- Burgee: the masthead wind vane, in the family gilt. Vaneskald flies a
+           sail here. Same wind-striped flying surface, different instrument. -->
+      <path d="M34 31 L90 46 L75 50 L90 54 L34 69 Z" fill="#E8B44A"/>
+      <path d="M34 35.6 L78.5 47.4 L68 50 L78.5 52.6 L34 64.4 Z" fill="#0C2549" opacity=".78"/>
+      <g fill="#7FC4F0">
+        <path d="M34 37.9 h21.5 v2.1 h-21.5 z"/>
+        <path d="M34 41.2 h33.0 v2.1 h-33.0 z"/>
+        <path d="M34 44.5 h39.5 v2.1 h-39.5 z"/>
+        <path d="M34 47.8 h32.5 v2.1 h-32.5 z"/>
+        <path d="M34 51.3 h32.5 v2.1 h-32.5 z"/>
+        <path d="M34 54.6 h38.5 v2.1 h-38.5 z"/>
+        <path d="M34 57.9 h32.0 v2.1 h-32.0 z"/>
+        <path d="M34 61.2 h20.5 v2.1 h-20.5 z"/>
       </g>
-      <g fill="none" stroke="#CFE9FB" stroke-width="2.6" stroke-linecap="round" opacity="0.8">
-        <path d="M50,210 q34,12 70,8 t70,-8"/>
-        <path d="M38,228 q44,10 90,0 t90,0"/>
-      </g>
-    </g>
-    <g stroke="#EAF4FF" stroke-linecap="round">
-      <g stroke-width="3.4">
-        <line x1="128" y1="11" x2="128" y2="22"/><line x1="245" y1="128" x2="234" y2="128"/>
-        <line x1="128" y1="245" x2="128" y2="234"/><line x1="11" y1="128" x2="22" y2="128"/>
-      </g>
-      <g stroke-width="2.2" opacity="0.65">
-        <line x1="210" y1="46" x2="203" y2="53"/><line x1="210" y1="210" x2="203" y2="203"/>
-        <line x1="46" y1="210" x2="53" y2="203"/><line x1="46" y1="46" x2="53" y2="53"/>
-      </g>
+    
+      <!-- Masthead: finial + the vane arrow that gives the brand its name -->
+      <circle cx="33" cy="16.8" r="3.2" fill="#E8B44A"/>
+      <path d="M36.4 14.2 L49 18.4 L36.4 22.6 Z" fill="#E8B44A"/>
+    
+      <!-- Mast: the steel spar, matching the weight and column of Vaneskald's blade -->
+      <path d="M28.9 19.8 h8.2 v56.4 h-8.2 z" fill="#CFE9FB"/>
+      <path d="M32.3 23 h1.4 v53 h-1.4 z" fill="#0C2549" opacity=".45"/>
+      <!-- Crosstree, the counterpart to Vaneskald's crossguard -->
+      <path d="M19 28.6 h18 v5.2 h-18 z" fill="#CFE9FB"/>
+      <path d="M19 28.6 h18 v1.5 h-18 z" fill="#0C2549" opacity=".3"/>
+    
+      <!-- Hull -->
+      <path d="M14 76.2 h72 q-1.6 10.4 -9.6 15.6 q-5.2 3.4 -12.4 3.4 h-28 q-7.2 0 -12.4 -3.4 q-8 -5.2 -9.6 -15.6 z" fill="#CFE9FB"/>
+      <path d="M14 76.2 h72 q-0.3 2.0 -0.8 3.9 h-70.4 q-0.5 -1.9 -0.8 -3.9 z" fill="#0C2549" opacity=".45"/>
     </g>
   </g>
   <g font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif" text-anchor="middle">
