@@ -10,19 +10,24 @@
            counterpart to Vaneskald's green; the gilt below is shared. -->
       <path d="M43.6 43.6 L50.0 3.0 L56.4 43.6 Z M56.4 43.6 L97.0 50.0 L56.4 56.4 Z M56.4 56.4 L50.0 97.0 L43.6 56.4 Z M43.6 56.4 L3.0 50.0 L43.6 43.6 Z M50.0 41.0 L69.8 30.2 L59.0 50.0 Z M59.0 50.0 L69.8 69.8 L50.0 59.0 Z M50.0 59.0 L30.2 69.8 L41.0 50.0 Z M41.0 50.0 L30.2 30.2 L50.0 41.0 Z" fill="#2E74B0"/>
     
-      <!-- Burgee: the masthead wind vane, in the family gilt. Vaneskald flies a
-           sail here. Same wind-striped flying surface, different instrument. -->
-      <path d="M34 31 L90 46 L75 50 L90 54 L34 69 Z" fill="#E8B44A"/>
-      <path d="M34 35.6 L78.5 47.4 L68 50 L78.5 52.6 L34 64.4 Z" fill="#0C2549" opacity=".78"/>
+      <!-- Pennant: the masthead wind vane, in the family gilt. Vaneskald flies a
+           sail here. Same wind-striped flying surface, different instrument.
+           The stripes are trapezoids that FOLLOW the taper, the way Vaneskald's
+           arc stripes follow its sail edge — plain rectangles overhang the inset
+           and leave a ragged sawtooth that only shows at large sizes.
+           The inset is OPAQUE, not Vaneskald's .78: its star is dark green so
+           .78 still reads solid, while this brighter blue star bleeds through
+           and muddies the stripes. Same appearance, different number. -->
+      <path d="M34 31 L90 50 L34 69 Z" fill="#E8B44A"/>
+      <path d="M34 35.6 L79 50 L34 64.4 Z" fill="#0C2549"/>
       <g fill="#7FC4F0">
-        <path d="M34 37.9 h21.5 v2.1 h-21.5 z"/>
-        <path d="M34 41.2 h33.0 v2.1 h-33.0 z"/>
-        <path d="M34 44.5 h39.5 v2.1 h-39.5 z"/>
-        <path d="M34 47.8 h32.5 v2.1 h-32.5 z"/>
-        <path d="M34 51.3 h32.5 v2.1 h-32.5 z"/>
-        <path d="M34 54.6 h38.5 v2.1 h-38.5 z"/>
-        <path d="M34 57.9 h32.0 v2.1 h-32.0 z"/>
-        <path d="M34 61.2 h20.5 v2.1 h-20.5 z"/>
+        <path d="M34.0 37.4 L38.1 37.4 L45.0 39.6 L34.0 39.6 Z"/>
+        <path d="M34.0 41.0 L49.4 41.0 L56.3 43.2 L34.0 43.2 Z"/>
+        <path d="M34.0 44.6 L60.6 44.6 L67.5 46.8 L34.0 46.8 Z"/>
+        <path d="M34.0 48.2 L71.9 48.2 L77.5 50.0 L76.2 50.4 L34.0 50.4 Z"/>
+        <path d="M34.0 51.8 L71.9 51.8 L65.0 54.0 L34.0 54.0 Z"/>
+        <path d="M34.0 55.4 L60.6 55.4 L53.7 57.6 L34.0 57.6 Z"/>
+        <path d="M34.0 59.0 L49.4 59.0 L42.5 61.2 L34.0 61.2 Z"/>
       </g>
     
       <!-- Masthead: finial + the vane arrow that gives the brand its name -->
@@ -40,7 +45,7 @@
       <path d="M14 76.2 h72 q-1.6 10.4 -9.6 15.6 q-5.2 3.4 -12.4 3.4 h-28 q-7.2 0 -12.4 -3.4 q-8 -5.2 -9.6 -15.6 z" fill="#CFE9FB"/>
       <path d="M14 76.2 h72 q-0.3 2.0 -0.8 3.9 h-70.4 q-0.5 -1.9 -0.8 -3.9 z" fill="#0C2549" opacity=".45"/>
     </g>
-  </g>
+    </g>
   <g transform="translate(64,60) scale(0.34)">
     <g transform="scale(2.56)">
       <!-- Compass star: IDENTICAL geometry to the Vaneskald mark. This is the house
@@ -48,19 +53,24 @@
            counterpart to Vaneskald's green; the gilt below is shared. -->
       <path d="M43.6 43.6 L50.0 3.0 L56.4 43.6 Z M56.4 43.6 L97.0 50.0 L56.4 56.4 Z M56.4 56.4 L50.0 97.0 L43.6 56.4 Z M43.6 56.4 L3.0 50.0 L43.6 43.6 Z M50.0 41.0 L69.8 30.2 L59.0 50.0 Z M59.0 50.0 L69.8 69.8 L50.0 59.0 Z M50.0 59.0 L30.2 69.8 L41.0 50.0 Z M41.0 50.0 L30.2 30.2 L50.0 41.0 Z" fill="#2E74B0"/>
     
-      <!-- Burgee: the masthead wind vane, in the family gilt. Vaneskald flies a
-           sail here. Same wind-striped flying surface, different instrument. -->
-      <path d="M34 31 L90 46 L75 50 L90 54 L34 69 Z" fill="#E8B44A"/>
-      <path d="M34 35.6 L78.5 47.4 L68 50 L78.5 52.6 L34 64.4 Z" fill="#0C2549" opacity=".78"/>
+      <!-- Pennant: the masthead wind vane, in the family gilt. Vaneskald flies a
+           sail here. Same wind-striped flying surface, different instrument.
+           The stripes are trapezoids that FOLLOW the taper, the way Vaneskald's
+           arc stripes follow its sail edge — plain rectangles overhang the inset
+           and leave a ragged sawtooth that only shows at large sizes.
+           The inset is OPAQUE, not Vaneskald's .78: its star is dark green so
+           .78 still reads solid, while this brighter blue star bleeds through
+           and muddies the stripes. Same appearance, different number. -->
+      <path d="M34 31 L90 50 L34 69 Z" fill="#E8B44A"/>
+      <path d="M34 35.6 L79 50 L34 64.4 Z" fill="#0C2549"/>
       <g fill="#7FC4F0">
-        <path d="M34 37.9 h21.5 v2.1 h-21.5 z"/>
-        <path d="M34 41.2 h33.0 v2.1 h-33.0 z"/>
-        <path d="M34 44.5 h39.5 v2.1 h-39.5 z"/>
-        <path d="M34 47.8 h32.5 v2.1 h-32.5 z"/>
-        <path d="M34 51.3 h32.5 v2.1 h-32.5 z"/>
-        <path d="M34 54.6 h38.5 v2.1 h-38.5 z"/>
-        <path d="M34 57.9 h32.0 v2.1 h-32.0 z"/>
-        <path d="M34 61.2 h20.5 v2.1 h-20.5 z"/>
+        <path d="M34.0 37.4 L38.1 37.4 L45.0 39.6 L34.0 39.6 Z"/>
+        <path d="M34.0 41.0 L49.4 41.0 L56.3 43.2 L34.0 43.2 Z"/>
+        <path d="M34.0 44.6 L60.6 44.6 L67.5 46.8 L34.0 46.8 Z"/>
+        <path d="M34.0 48.2 L71.9 48.2 L77.5 50.0 L76.2 50.4 L34.0 50.4 Z"/>
+        <path d="M34.0 51.8 L71.9 51.8 L65.0 54.0 L34.0 54.0 Z"/>
+        <path d="M34.0 55.4 L60.6 55.4 L53.7 57.6 L34.0 57.6 Z"/>
+        <path d="M34.0 59.0 L49.4 59.0 L42.5 61.2 L34.0 61.2 Z"/>
       </g>
     
       <!-- Masthead: finial + the vane arrow that gives the brand its name -->
@@ -78,7 +88,7 @@
       <path d="M14 76.2 h72 q-1.6 10.4 -9.6 15.6 q-5.2 3.4 -12.4 3.4 h-28 q-7.2 0 -12.4 -3.4 q-8 -5.2 -9.6 -15.6 z" fill="#CFE9FB"/>
       <path d="M14 76.2 h72 q-0.3 2.0 -0.8 3.9 h-70.4 q-0.5 -1.9 -0.8 -3.9 z" fill="#0C2549" opacity=".45"/>
     </g>
-  </g>
+    </g>
   <g font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif">
     <text x="158" y="128" font-size="44" font-weight="800" letter-spacing="0.5"><tspan fill="#FFFFFF">ship</tspan><tspan fill="#E8B44A">vane</tspan></text>
     <!-- EDIT: eyebrow -->
