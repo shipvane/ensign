@@ -62,7 +62,22 @@
     .nav-links a:hover{color:#fff}
 
     /* hero */
-    .hero{background:radial-gradient(1200px 500px at 50% -120px,#1b4f8c 0%,var(--navy) 55%,var(--navy2) 100%);
+        /* Night sky, the house motif (vanehouse.com and vaneskald.com both wear it).
+       Layered top-down: starfield tile, a gilt crown upper-left, the mark's blue
+       rising from the lower-right horizon, then the original hero radial as the
+       ground. Deliberately STATIC — Vaneskald animates its equivalent, but this
+       page is selling to people deciding whether to trust an agent with their
+       source, and a breathing gradient reads as a template. The depth comes from
+       the layering. The tile is a data URI, so none of it costs a request.
+       The starfield is 22 circles on a 300x300 tile, #CFE9FB at 0.55-1.0 alpha,
+       r 0.7-1.4, from random.seed(1204) — regenerable, not a magic blob, and
+       deliberately not a build step: this site has no toolchain and should not
+       grow one for a background. */
+.hero{background:
+        url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22300%22%3E%3Ccircle%20cx%3D%22194%22%20cy%3D%22199%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22223%22%20cy%3D%2256%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%2262%22%20cy%3D%22204%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22285%22%20cy%3D%2283%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22279%22%20cy%3D%2277%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22126%22%20cy%3D%2252%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22176%22%20cy%3D%2253%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%2257%22%20cy%3D%22259%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22153%22%20cy%3D%22170%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22116%22%20cy%3D%22107%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22201%22%20cy%3D%22112%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%2247%22%20cy%3D%22122%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2232%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%22245%22%20cy%3D%22263%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22203%22%20cy%3D%22142%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%22149%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22217%22%20cy%3D%2237%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%22166%22%20cy%3D%2223%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22269%22%20cy%3D%22185%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22283%22%20cy%3D%22231%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22252%22%20cy%3D%22258%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22112%22%20cy%3D%22112%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3C%2Fsvg%3E'),
+        radial-gradient(ellipse 70% 45% at 12% -12%, rgba(232,180,74,.13), transparent 60%),
+        radial-gradient(ellipse 95% 55% at 84% 114%, rgba(46,116,176,.40), transparent 66%),
+        radial-gradient(1200px 500px at 50% -120px,#1b4f8c 0%,var(--navy) 55%,var(--navy2) 100%);
       color:#fff;text-align:center;padding:64px 0 96px;position:relative;overflow:hidden}
     .hero img.emblem{width:148px;height:148px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.4));margin-bottom:26px}
     .hero h1{font-size:54px;line-height:1.08;font-weight:800;letter-spacing:-1px;max-width:760px;margin:0 auto}
@@ -112,7 +127,13 @@
     .clients-note{text-align:center;color:var(--muted);font-size:14.5px;margin-top:22px}
 
     /* contract band */
-    .band{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;
+        /* The band is a card rather than a full-bleed section, so it gets the
+       starfield and a single gilt glow — no second horizon, which would read as
+       a competing hero inside the page. */
+.band{background:
+        url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22300%22%3E%3Ccircle%20cx%3D%22194%22%20cy%3D%22199%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22223%22%20cy%3D%2256%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%2262%22%20cy%3D%22204%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22285%22%20cy%3D%2283%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22279%22%20cy%3D%2277%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22126%22%20cy%3D%2252%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22176%22%20cy%3D%2253%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%2257%22%20cy%3D%22259%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22153%22%20cy%3D%22170%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22116%22%20cy%3D%22107%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22201%22%20cy%3D%22112%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%2247%22%20cy%3D%22122%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2232%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%22245%22%20cy%3D%22263%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22203%22%20cy%3D%22142%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%22149%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22217%22%20cy%3D%2237%22%20r%3D%221.1%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.85%22%2F%3E%3Ccircle%20cx%3D%22166%22%20cy%3D%2223%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22269%22%20cy%3D%22185%22%20r%3D%220.9%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22283%22%20cy%3D%22231%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22252%22%20cy%3D%22258%22%20r%3D%221.4%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%221%22%2F%3E%3Ccircle%20cx%3D%22112%22%20cy%3D%22112%22%20r%3D%220.7%22%20fill%3D%22%23CFE9FB%22%20opacity%3D%220.55%22%2F%3E%3C%2Fsvg%3E'),
+        radial-gradient(ellipse 60% 70% at 88% 8%, rgba(232,180,74,.11), transparent 62%),
+        linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;
       padding:54px 40px;text-align:center;max-width:920px;margin:0 auto}
     .band h2{color:#fff}
     .band p{color:#bcd3ec;max-width:560px;margin:6px auto 0;font-size:17px}
