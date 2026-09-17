@@ -1,7 +1,7 @@
 # Post templates
 
 Drop-in, on-brand post/thumbnail templates. Both are self-contained SVGs using the
-kit's emblem, palette (deep-navy ground, emerald `#34D399` accent), and Avenir Next.
+kit's emblem, palette (deep-navy ground, emerald `#E8B44A` accent), and Avenir Next.
 
 | File | Size | Use |
 |---|---|---|

@@ -9,7 +9,7 @@
   <image href="assets/logo.svg" x="92" y="150" width="330" height="330"/>
   <!-- text block -->
   <g font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif">
-    <rect x="470" y="150" width="514" height="44" rx="22" fill="rgba(52,211,153,0.12)" stroke="#E8B44A" stroke-opacity="0.4"/>
+    <rect x="470" y="150" width="514" height="44" rx="22" fill="rgba(232,180,74,0.14)" stroke="#E8B44A" stroke-opacity="0.4"/>
     <text x="494" y="179" font-size="20" font-weight="700" letter-spacing="2" fill="#E8B44A">YOUR CODE · YOUR CLOUD · YOUR CALL</text>
     <text x="470" y="290" font-size="104" font-weight="800" letter-spacing="1">
       <tspan fill="#FFFFFF">ship</tspan><tspan fill="#E8B44A">vane</tspan>

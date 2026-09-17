@@ -14,7 +14,7 @@
     </text>
 
     <!-- eyebrow pill -->
-    <rect x="68" y="196" width="258" height="42" rx="21" fill="rgba(52,211,153,0.12)" stroke="#E8B44A" stroke-opacity="0.4"/>
+    <rect x="68" y="196" width="258" height="42" rx="21" fill="rgba(232,180,74,0.14)" stroke="#E8B44A" stroke-opacity="0.4"/>
     <text x="90" y="223" font-size="19" font-weight="700" letter-spacing="2" fill="#E8B44A">PROVEN BY REAL CI</text>
 
     <!-- headline -->
