@@ -21,7 +21,7 @@
     <g clip-path="url(#sceneb)">
       <rect x="22" y="22" width="212" height="212" fill="url(#skyb)"/>
       <path d="M22,170 Q128,162 234,170 L234,234 L22,234 Z" fill="url(#seab)"/>
-      <polygon points="128,24 136,52 128,45 120,52" fill="#34D399"/>
+      <polygon points="128,24 136,52 128,45 120,52" fill="#E8B44A"/>
       <circle cx="128" cy="52" r="2.4" fill="#0C2746"/>
       <path d="M130,60 Q92,62 60,80 Q128,72 196,80 Q168,62 130,60 Z" fill="#5A9AD8"/>
       <rect x="118" y="52" width="24" height="11" rx="2.5" fill="#CFE2F7"/>
@@ -31,7 +31,7 @@
       <path d="M130,60 L120,202" fill="none" stroke="#A8CFF2" stroke-width="2.6" opacity="0.85"/>
       <path d="M58,118 Q120,108 198,118" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
       <path d="M72,150 Q120,142 168,150" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
-      <path d="M70,168 Q120,196 170,168" fill="none" stroke="#34D399" stroke-width="2" opacity="0.7"/>
+      <path d="M70,168 Q120,196 170,168" fill="none" stroke="#E8B44A" stroke-width="2" opacity="0.7"/>
       <circle cx="104" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
       <circle cx="150" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
       <g fill="#CFE9FB">
@@ -60,7 +60,7 @@
     <g clip-path="url(#scene)">
       <rect x="22" y="22" width="212" height="212" fill="url(#sky)"/>
       <path d="M22,170 Q128,162 234,170 L234,234 L22,234 Z" fill="url(#sea)"/>
-      <polygon points="128,24 136,52 128,45 120,52" fill="#34D399"/>
+      <polygon points="128,24 136,52 128,45 120,52" fill="#E8B44A"/>
       <circle cx="128" cy="52" r="2.4" fill="#0C2746"/>
       <path d="M130,60 Q92,62 60,80 Q128,72 196,80 Q168,62 130,60 Z" fill="#5A9AD8"/>
       <rect x="118" y="52" width="24" height="11" rx="2.5" fill="#CFE2F7"/>
@@ -70,7 +70,7 @@
       <path d="M130,60 L120,202" fill="none" stroke="#A8CFF2" stroke-width="2.6" opacity="0.85"/>
       <path d="M58,118 Q120,108 198,118" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
       <path d="M72,150 Q120,142 168,150" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
-      <path d="M70,168 Q120,196 170,168" fill="none" stroke="#34D399" stroke-width="2" opacity="0.7"/>
+      <path d="M70,168 Q120,196 170,168" fill="none" stroke="#E8B44A" stroke-width="2" opacity="0.7"/>
       <circle cx="104" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
       <circle cx="150" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
       <g fill="#CFE9FB">
@@ -94,9 +94,9 @@
     </g>
   </g>
   <g font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif">
-    <text x="158" y="128" font-size="44" font-weight="800" letter-spacing="0.5"><tspan fill="#FFFFFF">ship</tspan><tspan fill="#34D399">vane</tspan></text>
+    <text x="158" y="128" font-size="44" font-weight="800" letter-spacing="0.5"><tspan fill="#FFFFFF">ship</tspan><tspan fill="#E8B44A">vane</tspan></text>
     <!-- EDIT: eyebrow -->
-    <text x="66" y="320" font-size="24" font-weight="700" letter-spacing="3.5" fill="#34D399">FROM THE ENGINE</text>
+    <text x="66" y="320" font-size="24" font-weight="700" letter-spacing="3.5" fill="#E8B44A">FROM THE ENGINE</text>
     <!-- EDIT: headline (1-2 lines) -->
     <text font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-1" fill="#FFFFFF">
       <tspan x="66" y="418">Your code. Your cloud.</tspan>

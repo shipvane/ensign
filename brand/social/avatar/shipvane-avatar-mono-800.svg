@@ -5,6 +5,6 @@
   <rect width="800" height="800" fill="#0a1f3b"/>
   <g transform="translate(104.0,104.0) scale(2.3125)">
     <rect x="0" y="0" width="256" height="256" rx="58" fill="url(#svbg)"/>
-    <text x="128" y="177" text-anchor="middle" font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif" font-size="142" font-weight="800" letter-spacing="2"><tspan fill="#FFFFFF">S</tspan><tspan fill="#34D399">V</tspan></text>
+    <text x="128" y="177" text-anchor="middle" font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif" font-size="142" font-weight="800" letter-spacing="2"><tspan fill="#FFFFFF">S</tspan><tspan fill="#E8B44A">V</tspan></text>
   </g>
 </svg>
