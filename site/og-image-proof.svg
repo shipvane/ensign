@@ -10,16 +10,16 @@
   <image href="assets/logo.svg" x="64" y="52" width="86" height="86"/>
   <g font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif">
     <text x="166" y="112" font-size="50" font-weight="800" letter-spacing="1">
-      <tspan fill="#FFFFFF">ship</tspan><tspan fill="#34D399">vane</tspan>
+      <tspan fill="#FFFFFF">ship</tspan><tspan fill="#E8B44A">vane</tspan>
     </text>
 
     <!-- eyebrow pill -->
-    <rect x="68" y="196" width="258" height="42" rx="21" fill="rgba(52,211,153,0.12)" stroke="#34D399" stroke-opacity="0.4"/>
-    <text x="90" y="223" font-size="19" font-weight="700" letter-spacing="2" fill="#34D399">PROVEN BY REAL CI</text>
+    <rect x="68" y="196" width="258" height="42" rx="21" fill="rgba(52,211,153,0.12)" stroke="#E8B44A" stroke-opacity="0.4"/>
+    <text x="90" y="223" font-size="19" font-weight="700" letter-spacing="2" fill="#E8B44A">PROVEN BY REAL CI</text>
 
     <!-- headline -->
     <text x="66" y="316" font-size="62" font-weight="800" letter-spacing="0.5" fill="#FFFFFF">One ticket in.</text>
-    <text x="66" y="384" font-size="62" font-weight="800" letter-spacing="0.5" fill="#34D399">A merge-ready PR.</text>
+    <text x="66" y="384" font-size="62" font-weight="800" letter-spacing="0.5" fill="#E8B44A">A merge-ready PR.</text>
 
     <!-- sub -->
     <text x="70" y="444" font-size="24" fill="#7FA8C8">Planned, written, and proven against your</text>
@@ -31,32 +31,32 @@
     <rect x="742" y="150" width="394" height="330" rx="18" fill="#0F2748" stroke="#2A466A" stroke-width="1.5"/>
 
     <!-- header: All checks passed -->
-    <circle cx="784" cy="197" r="14" fill="#34D399"/>
+    <circle cx="784" cy="197" r="14" fill="#E8B44A"/>
     <text x="784" y="198" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="900" fill="#04231a">✓</text>
     <text x="810" y="197" dominant-baseline="central" font-size="24" font-weight="700" fill="#FFFFFF">All checks passed</text>
     <line x1="766" y1="230" x2="1112" y2="230" stroke="#24405f" stroke-width="1"/>
 
     <!-- job rows -->
     <g>
-      <circle cx="786" cy="272" r="11" fill="#34D399"/>
+      <circle cx="786" cy="272" r="11" fill="#E8B44A"/>
       <text x="786" y="273" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="900" fill="#04231a">✓</text>
       <text x="810" y="272" dominant-baseline="central" font-size="21" fill="#D7E6F5">Backend tests</text>
       <text x="1108" y="272" text-anchor="end" dominant-baseline="central" font-size="17" fill="#5B7A98">42s</text>
     </g>
     <g>
-      <circle cx="786" cy="324" r="11" fill="#34D399"/>
+      <circle cx="786" cy="324" r="11" fill="#E8B44A"/>
       <text x="786" y="325" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="900" fill="#04231a">✓</text>
       <text x="810" y="324" dominant-baseline="central" font-size="21" fill="#D7E6F5">Infra synth</text>
       <text x="1108" y="324" text-anchor="end" dominant-baseline="central" font-size="17" fill="#5B7A98">28s</text>
     </g>
     <g>
-      <circle cx="786" cy="376" r="11" fill="#34D399"/>
+      <circle cx="786" cy="376" r="11" fill="#E8B44A"/>
       <text x="786" y="377" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="900" fill="#04231a">✓</text>
       <text x="810" y="376" dominant-baseline="central" font-size="21" fill="#D7E6F5">Web build &amp; test</text>
       <text x="1108" y="376" text-anchor="end" dominant-baseline="central" font-size="17" fill="#5B7A98">1m 40s</text>
     </g>
     <g>
-      <circle cx="786" cy="428" r="11" fill="#34D399"/>
+      <circle cx="786" cy="428" r="11" fill="#E8B44A"/>
       <text x="786" y="429" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="900" fill="#04231a">✓</text>
       <text x="810" y="428" dominant-baseline="central" font-size="21" fill="#D7E6F5">Lint &amp; format</text>
       <text x="1108" y="428" text-anchor="end" dominant-baseline="central" font-size="17" fill="#5B7A98">38s</text>

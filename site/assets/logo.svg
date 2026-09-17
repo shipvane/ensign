@@ -26,7 +26,7 @@
     <path d="M22,170 Q128,162 234,170 L234,234 L22,234 Z" fill="url(#sea)"/>
 
     <!-- north needle -->
-    <polygon points="128,24 136,52 128,45 120,52" fill="#34D399"/>
+    <polygon points="128,24 136,52 128,45 120,52" fill="#E8B44A"/>
     <circle cx="128" cy="52" r="2.4" fill="#0C2746"/>
 
     <!-- forecastle deck cap (seen from below) -->
@@ -46,7 +46,7 @@
     <path d="M58,118 Q120,108 198,118" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
     <path d="M72,150 Q120,142 168,150" fill="none" stroke="#0C2549" stroke-width="1.6" opacity="0.35"/>
     <!-- boot stripe at waterline -->
-    <path d="M70,168 Q120,196 170,168" fill="none" stroke="#34D399" stroke-width="2" opacity="0.7"/>
+    <path d="M70,168 Q120,196 170,168" fill="none" stroke="#E8B44A" stroke-width="2" opacity="0.7"/>
     <!-- anchor hawse + bow markings -->
     <circle cx="104" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
     <circle cx="150" cy="150" r="2.6" fill="#0C2549" opacity="0.55"/>
