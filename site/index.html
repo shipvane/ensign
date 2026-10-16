@@ -193,6 +193,28 @@
       font-size:14px;margin-bottom:12px}
     .ev-card h4{font-size:16px;margin-bottom:6px}
     .ev-card p{color:var(--muted);font-size:14.5px}
+    /* Live ship log (fed by Bridge's public /api/public/shiplog). Hidden until
+       the fetch succeeds, so a Bridge outage just leaves the static proof above. */
+    .slog{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 28px}
+    .slog-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+    .slog-head h3{font-size:18px;display:flex;align-items:center;gap:9px}
+    .slog-dot{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(18,160,116,.15)}
+    .slog-note{color:var(--muted);font-size:13px}
+    .slog-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+    .slog-stat{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+    .slog-stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.4px;line-height:1.2}
+    .slog-stat span{color:var(--muted);font-size:13.5px}
+    .slog-list{list-style:none}
+    .slog-list li{border-top:1px solid var(--line)}
+    .slog-list a{display:grid;grid-template-columns:52px 1fr auto auto;align-items:center;gap:14px;padding:11px 4px}
+    .slog-list a:hover .slog-title{text-decoration:underline;text-underline-offset:3px}
+    .slog-num{color:var(--muted);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+    .slog-title{font-size:15px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .slog-meta{color:var(--muted);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+    .slog-chip{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap}
+    .slog-merged{color:var(--ok);background:rgba(18,160,116,.09);border:1px solid rgba(18,160,116,.25)}
+    .slog-closed{color:var(--muted);background:rgba(91,107,122,.07);border:1px solid rgba(91,107,122,.2)}
+    .slog-open{color:var(--blue);background:rgba(42,92,156,.08);border:1px solid rgba(42,92,156,.22)}
     .ship-hint{display:none;text-align:center;color:var(--muted);font-size:13.5px;margin:-22px 0 34px}
 
     /* The nav collapses at 760px, and its six links + button needed 757px to
@@ -209,6 +231,10 @@
       h2{font-size:30px}
       .fleet,.ev{grid-template-columns:1fr}
       .proof{justify-content:flex-start}
+      .slog{padding:20px 16px}
+      .slog-stats{grid-template-columns:1fr}
+      .slog-list a{grid-template-columns:44px 1fr auto;gap:10px}
+      .slog-meta{display:none}
       /* Shrunk to phone width the labels stop being readable, so let the
          diagram keep its size and scroll inside its own box instead. */
       .ship-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:34px}
@@ -524,10 +550,23 @@
           and the UI, plus the test file it wrote to prove the feature worked — green in TideLog's CI
           before anyone looked at it.</p>
         <div class="cta" style="margin-top:18px">
-          <a class="btn btn-dark" href="https://demo.shipvane.com">See the live app →</a>
+          <a class="btn btn-dark" href="https://tidelog.shipvane.com">See the live app →</a>
           <a class="btn btn-ghost" href="https://github.com/shipvane/tidelog/pulls"
              style="border-color:var(--line);color:var(--ink)">Read the pull requests →</a>
         </div>
+      </div>
+
+      <div class="slog" id="shiplog" hidden>
+        <div class="slog-head">
+          <h3><span class="slog-dot" aria-hidden="true"></span>Live from the ship log</h3>
+          <span class="slog-note" id="shiplog-note"></span>
+        </div>
+        <div class="slog-stats">
+          <div class="slog-stat"><b id="shiplog-rate"></b><span id="shiplog-rate-label"></span></div>
+          <div class="slog-stat"><b id="shiplog-cost"></b><span>Bedrock cost per merged PR</span></div>
+          <div class="slog-stat"><b id="shiplog-merged"></b><span id="shiplog-merged-label">PRs merged into TideLog</span></div>
+        </div>
+        <ul class="slog-list" id="shiplog-list"></ul>
       </div>
     </div>
   </section>
@@ -602,6 +641,65 @@
     </nav>
     <div>Ship your code, just point the way. · © 2026 Shipvane · Created by <a class="credit" href="https://www.gigadude.com" target="_blank" rel="noopener noreferrer">gigadude</a></div>
   </div></footer>
+
+  <script>
+    // Live ship log: the demo board's latest PRs and its real success rate, read
+    // from Bridge's public endpoint (bridge/routers/public.py). Every outcome is
+    // listed, closed ones too. Text goes in via textContent, never innerHTML,
+    // because ticket titles are user-written. Any failure leaves the block hidden.
+    (function () {
+      var box = document.getElementById('shiplog');
+      if (!box || !window.fetch) return;
+      var $ = function (id) { return document.getElementById(id); };
+      function money(v) { return '$' + v.toFixed(2); }
+      function ago(iso) {
+        var t = Date.parse(iso);
+        if (isNaN(t)) return '';
+        var d = Math.floor((Date.now() - t) / 86400000);
+        return d <= 0 ? 'today' : d === 1 ? 'yesterday' : d + ' days ago';
+      }
+      function el(tag, cls, text) {
+        var n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text != null) n.textContent = text;
+        return n;
+      }
+      fetch('https://bridge.shipvane.com/api/public/shiplog', { headers: { Accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) {
+          if (!d || !d.complete || !d.prs || !d.prs.length) return;
+          var s = d.stats || {};
+          // Not measured is not 0%: a null rate shows a dash, never a zero.
+          $('shiplog-rate').textContent = s.success_rate == null ? '—' : Math.round(s.success_rate * 100) + '%';
+          $('shiplog-rate-label').textContent = s.success_rate == null
+            ? 'of runs merged (not measured yet)'
+            : 'of agent runs merged (' + s.merged_runs + ' of ' + s.terminal_runs + ', last ' + d.window_days + ' days)';
+          $('shiplog-cost').textContent = s.cost_per_merged_pr_usd == null ? '—' : money(s.cost_per_merged_pr_usd);
+          $('shiplog-merged').textContent = s.merged_runs == null ? '—' : String(s.merged_runs);
+          $('shiplog-merged-label').textContent = 'PRs merged into TideLog, last ' + d.window_days + ' days';
+          $('shiplog-note').textContent = 'Every run, failures included · updated ' + ago(d.generated_at);
+          var list = $('shiplog-list');
+          d.prs.slice(0, 8).forEach(function (p) {
+            if (!/^https:\/\/github\.com\//.test(p.pr_url || '')) return;
+            var a = el('a');
+            a.href = p.pr_url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+            a.appendChild(el('span', 'slog-num', p.pr_number ? '#' + p.pr_number : 'PR'));
+            a.appendChild(el('span', 'slog-title', p.summary || ('TideLog issue #' + (p.ticket_key || '?'))));
+            var meta = [];
+            if (p.cost_usd != null) meta.push(money(p.cost_usd));
+            if (p.duration_ms != null) meta.push(Math.max(1, Math.round(p.duration_ms / 60000)) + ' min');
+            if (p.finished_at) meta.push(ago(p.finished_at));
+            a.appendChild(el('span', 'slog-meta', meta.join(' · ')));
+            var state = p.pr_state || 'unknown';
+            var label = { merged: 'Merged', closed: 'Closed', open: 'Open' }[state];
+            a.appendChild(el('span', 'slog-chip slog-' + (label ? state : 'closed'), label || 'Unknown'));
+            var li = el('li'); li.appendChild(a); list.appendChild(li);
+          });
+          box.hidden = false;
+        })
+        .catch(function () { /* leave the static proof as it was */ });
+    })();
+  </script>
 
   <script>
     // Waitlist: submit via fetch so the page never navigates away.
